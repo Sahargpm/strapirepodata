@@ -1,0 +1,41 @@
+export default function flattenDataAttribute(data) {
+  // Check if data is a plain object; return as is if not
+  if (
+    typeof data !== "object" ||
+    data === null ||
+    data instanceof Date ||
+    typeof data === "function"
+  ) {
+    return data;
+  }
+
+  // If data is an array, apply flattenAttributes to each element and return as array
+  if (Array.isArray(data)) {
+    return data.map((item) => flattenDataAttribute(item));
+  }
+
+  // Initialize an object with an index signature for the flattened structure
+  let flattened = {};
+
+  // Iterate over each key in the object
+  for (let key in data) {
+    // Skip inherited properties from the prototype chain
+    if (!data.hasOwnProperty(key)) continue;
+
+    // If the key is 'attributes' or 'data', and its value is an object, merge their contents
+    if (
+      (key === "attributes" || key === "data") &&
+      typeof data[key] === "object" &&
+      !Array.isArray(data[key])
+    ) {
+      Object.assign(flattened, flattenDataAttribute(data[key]));
+    } else {
+      // For other keys, copy the value, applying flattenAttributes if it's an object
+      flattened[key] = flattenDataAttribute(data[key]);
+    }
+  }
+
+  return flattened;
+}
+
+
