@@ -11,6 +11,10 @@ const nextConfig = {
           {
             protocol: 'http',
             hostname: 'placehold.co',
+          },{
+            protocol: 'http',
+            hostname: 'supportive-boat-43618c4336.media.strapiapp.com',
+            
           }
         ],
       },
