@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
-import  StrapiImage from "../Component/strapiImage";
+import  StrapiImage from "../Component/StrapiImage";
 
 export default function Herosection({ data }) {
     // console.dir(data, { depth: null });
