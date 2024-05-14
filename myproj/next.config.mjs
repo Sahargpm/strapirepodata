@@ -17,6 +17,7 @@ const nextConfig = {
             
           }
         ],
+        domains: ['supportive-boat-43618c4336.media.strapiapp.com'],
       },
 };
 

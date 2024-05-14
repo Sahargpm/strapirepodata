@@ -1,5 +1,5 @@
 export function getStrapiURL() {
-    return process.env.STRAPI_URL ?? "http://localhost:1337";
+    return process.env.STRAPI_URL ?? "https://supportive-boat-43618c4336.strapiapp.com";
   }
   
   export default function getStrapiMedia(url) {

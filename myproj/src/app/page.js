@@ -43,7 +43,7 @@ async function getStrapiData(path) {
   }
 }
 async function getStrapiprops(path) {
-  const baseUrl = "http://localhost:1337";
+  const baseUrl = "https://supportive-boat-43618c4336.strapiapp.com";
 
   try {
     const response = await fetch(baseUrl+path);
